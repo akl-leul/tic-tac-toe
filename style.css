@@ -1,1 +1,110 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    transition: background 0.5s;
+    overflow: hidden;
+}
+h1 {
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 8px;
+    margin: 20px auto;
+    width: 380px;
+    padding: 10px;
+    background: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+.cell {
+    width: 120px;
+    height: 120px;
+    font-size: 2.5em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #292929;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.1);
+    transition: 0.2s;
+}
+.cell:hover {
+    background: #383838;
+}
+.cell.taken {
+    cursor: not-allowed;
+    color: #ffcc00;
+}
+.controls {
+    margin-top: 20px;
+}
+button {
+    padding: 12px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 10px;
+    background: #ffcc00;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+button:hover {
+    background: #ffdb4d;
+}
+#status {
+    font-size: 1.5em;
+    margin-top: 15px;
+    color: #ffcc00;
+}
+#status.win {
+    color: #ff0;
+    font-size: 2em;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+#score {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+#score span {
+    margin: 0 20px;
+}
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 15px #ff0;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff0, 0 0 30px #ff0, 0 0 40px #ff0;
+    }
+}
+body.win {
+    background: linear-gradient(to right, #ff0, #ff9900);
+}
+.sparkle {
+    position: absolute;
+    font-size: 2rem;
+    color: #ffcc00;
+    animation: sparkle 1s ease-out infinite;
+}
+@keyframes sparkle {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(1.5);
+    }
+}
 
